@@ -30,7 +30,7 @@ module.exports = {
         {
           id: 6,
           text:
-            "От меня как профессионала мало зависит благополучие партнеров."       
+            "От меня как профессионала мало зависит благополучие партнеров.",
         },
         {
           id: 7,
@@ -49,8 +49,7 @@ module.exports = {
         },
         {
           id: 10,
-          text:
-            "Моя работа притупляет эмоции.",
+          text: "Моя работа притупляет эмоции.",
         },
         {
           id: 11,
@@ -69,13 +68,11 @@ module.exports = {
         },
         {
           id: 14,
-          text:
-            "Работа приносит мне все меньше удовлетворения.",
+          text: "Работа приносит мне все меньше удовлетворения.",
         },
         {
           id: 15,
-          text:
-            "Я бы сменил место работы, если бы представилась возможность.",
+          text: "Я бы сменил место работы, если бы представилась возможность.",
         },
         {
           id: 16,
@@ -109,13 +106,11 @@ module.exports = {
         },
         {
           id: 22,
-          text:
-            "Я спокойно воспринимаю обоснованные претензии партнеров.",
+          text: "Я спокойно воспринимаю обоснованные претензии партнеров.",
         },
         {
           id: 23,
-          text:
-            "Общение с партнерами побудило меня сторониться людей.",
+          text: "Общение с партнерами побудило меня сторониться людей.",
         },
         {
           id: 24,
@@ -134,8 +129,7 @@ module.exports = {
         },
         {
           id: 27,
-          text:
-            "Обстановка на работе мне кажется очень трудной, сложной.",
+          text: "Обстановка на работе мне кажется очень трудной, сложной.",
         },
         {
           id: 28,
@@ -154,8 +148,7 @@ module.exports = {
         },
         {
           id: 31,
-          text:
-            "Я охотно рассказываю домашним о своей работе.",
+          text: "Я охотно рассказываю домашним о своей работе.",
         },
         {
           id: 32,
@@ -169,8 +162,7 @@ module.exports = {
         },
         {
           id: 34,
-          text:
-            "Я очень переживаю за свою работу.",
+          text: "Я очень переживаю за свою работу.",
         },
         {
           id: 35,
@@ -189,8 +181,7 @@ module.exports = {
         },
         {
           id: 38,
-          text:
-            "Я часто радуюсь, видя, что моя работа приносит пользу людям.",
+          text: "Я часто радуюсь, видя, что моя работа приносит пользу людям.",
         },
         {
           id: 39,
@@ -249,8 +240,7 @@ module.exports = {
         },
         {
           id: 50,
-          text:
-            "Успехи в работе вдохновляют меня.",
+          text: "Успехи в работе вдохновляют меня.",
         },
         {
           id: 51,
@@ -259,8 +249,7 @@ module.exports = {
         },
         {
           id: 52,
-          text:
-            "Я потерял покой из-за работы.",
+          text: "Я потерял покой из-за работы.",
         },
         {
           id: 53,
@@ -274,13 +263,11 @@ module.exports = {
         },
         {
           id: 55,
-          text:
-            "Я часто с работы приношу домой отрицательные эмоции.",
+          text: "Я часто с работы приношу домой отрицательные эмоции.",
         },
         {
           id: 56,
-          text:
-            "Я часто работаю через силу.",
+          text: "Я часто работаю через силу.",
         },
         {
           id: 57,
@@ -299,13 +286,11 @@ module.exports = {
         },
         {
           id: 60,
-          text:
-            "После напряженного рабочего дня я чувствую недомогание.",
+          text: "После напряженного рабочего дня я чувствую недомогание.",
         },
         {
           id: 61,
-          text:
-            "Контингент партнеров, с которым я работаю, очень трудный.",
+          text: "Контингент партнеров, с которым я работаю, очень трудный.",
         },
         {
           id: 62,
@@ -314,8 +299,7 @@ module.exports = {
         },
         {
           id: 63,
-          text:
-            "Если бы мне повезло с работой, я был бы более счастлив.",
+          text: "Если бы мне повезло с работой, я был бы более счастлив.",
         },
         {
           id: 64,
@@ -339,8 +323,7 @@ module.exports = {
         },
         {
           id: 68,
-          text:
-            "Обычно я тороплю время: скорей бы рабочий день кончился.",
+          text: "Обычно я тороплю время: скорей бы рабочий день кончился.",
         },
         {
           id: 69,
@@ -354,18 +337,15 @@ module.exports = {
         },
         {
           id: 71,
-          text:
-            "Работа с людьми (партнерами) очень разочаровала меня.",
+          text: "Работа с людьми (партнерами) очень разочаровала меня.",
         },
         {
           id: 72,
-          text:
-            "Чтобы восстановить силы, я часто принимаю лекарства.",
+          text: "Чтобы восстановить силы, я часто принимаю лекарства.",
         },
         {
           id: 73,
-          text:
-            "Как правило, мой рабочий день проходит спокойно и легко.",
+          text: "Как правило, мой рабочий день проходит спокойно и легко.",
         },
         {
           id: 74,
@@ -374,13 +354,11 @@ module.exports = {
         },
         {
           id: 75,
-          text:
-            "Моя карьера сложилась удачно.",
+          text: "Моя карьера сложилась удачно.",
         },
         {
           id: 76,
-          text:
-            "Я очень нервничаю из-за всего, что связано с работой.",
+          text: "Я очень нервничаю из-за всего, что связано с работой.",
         },
         {
           id: 77,
@@ -404,8 +382,7 @@ module.exports = {
         },
         {
           id: 81,
-          text:
-            "Меня часто подводят нервы в общении с людьми на работе.",
+          text: "Меня часто подводят нервы в общении с людьми на работе.",
         },
         {
           id: 82,
@@ -419,39 +396,38 @@ module.exports = {
         },
         {
           id: 84,
-          text:
-            "Работа с людьми явно подрывает мое здоровье.",
+          text: "Работа с людьми явно подрывает мое здоровье.",
         },
       ],
 
       criterions: {
-
         TENSION_CIRCUMSTANCES: "Переживание психотравмирующих обстоятельств",
         TENSION_SELF_SATISFACTION: "Удовлетворенность собой",
         TENSION_CAGED: "«Загнанность в клетку»",
         TENSION_DEPRESSION: "Тревога и депрессия",
 
-        RESISTANCE_EMOTIONAL_RESPONSE: "Неадекватное избирательное эмоциональное реагирование",
+        RESISTANCE_EMOTIONAL_RESPONSE:
+          "Неадекватное избирательное эмоциональное реагирование",
         RESISTANCE_DISORIENTATION: "Эмоционально-нравственная дезориентация",
         RESISTANCE_EXPANDING_THE_SCOPE: "Расширение сферы экономии эмоций",
         RESISTANCE_PROF_DUTIES: "Редукция профессиональных обязанностей",
 
         DEPLETION_EMOTIONAL_DEFECITS: "Эмоциональный дефицит",
         DEPLETION_EMOTIONAL_DETACHMENT: "Эмоциональная отстраненность",
-        DEPLETION_DEPERSONALIZATION: "Личностная отстраненность (деперсонализация)",
-        DEPLETION_PSYCHO_DISORDERS: "Психосоматические и психовегетативные нарушения",
+        DEPLETION_DEPERSONALIZATION:
+          "Личностная отстраненность (деперсонализация)",
+        DEPLETION_PSYCHO_DISORDERS:
+          "Психосоматические и психовегетативные нарушения",
 
         TENSION: "напряжение",
         RESISTANCE: "резистенция",
         DEPLETION: "истощение",
 
-        SYMBOL_PLUS: "+",
-        SYMBOL_MINUS: "-",
-
+        SYMBOL_PLUS: "yes",
+        SYMBOL_MINUS: "no",
       },
 
       common: {
-
         WELCOME_TEXT: `Добро пожаловать в бот социальной поддержки CodeFlexers 
           \nОн поможет вам справиться с проблемами профессионального выгорания. 
           \nПосле короткого теста вы получите информацию о состоянии вашего эмоционального выгорания и рекомендации, как справиться с ситуацией. 
@@ -461,8 +437,7 @@ module.exports = {
         LANGUAGE_CHANGED: `Язык успешно изменен. 
           \n\nНажмите /language, чтобы выбрать язык. 
           \n\nНажмите /questionnaire чтобы начать опрос`,
-
-      }
+      },
     },
 
     lang_en: {
@@ -495,7 +470,7 @@ module.exports = {
         {
           id: 6,
           text:
-            "As a professional, the well-being of partners hardly depends on me. "       
+            "As a professional, the well-being of partners hardly depends on me. ",
         },
         {
           id: 7,
@@ -505,7 +480,7 @@ module.exports = {
         {
           id: 8,
           text:
-            "When I feel tired or stressed, I try to \"wind down\" the case as soon as possible.",
+            'When I feel tired or stressed, I try to "wind down" the case as soon as possible.',
         },
         {
           id: 9,
@@ -514,8 +489,7 @@ module.exports = {
         },
         {
           id: 10,
-          text:
-            "My work dulls my emotions.",
+          text: "My work dulls my emotions.",
         },
         {
           id: 11,
@@ -529,18 +503,15 @@ module.exports = {
         },
         {
           id: 13,
-          text:
-            "Interaction with partners requires a lot of stress from me.",
+          text: "Interaction with partners requires a lot of stress from me.",
         },
         {
           id: 14,
-          text:
-            "My work gives me less satisfaction.",
+          text: "My work gives me less satisfaction.",
         },
         {
           id: 15,
-          text:
-            "I would change jobs if the opportunity presented itself.",
+          text: "I would change jobs if the opportunity presented itself.",
         },
         {
           id: 16,
@@ -574,8 +545,7 @@ module.exports = {
         },
         {
           id: 22,
-          text:
-            "I calmly accept the well-founded claims of partners.",
+          text: "I calmly accept the well-founded claims of partners.",
         },
         {
           id: 23,
@@ -615,12 +585,11 @@ module.exports = {
         {
           id: 30,
           text:
-            "In communication at work, I adhere to the principle: \"do not do good to people, you will not get evil.\"",
+            'In communication at work, I adhere to the principle: "do not do good to people, you will not get evil."',
         },
         {
           id: 31,
-          text:
-            "I gladly tell my family about my work.",
+          text: "I gladly tell my family about my work.",
         },
         {
           id: 32,
@@ -634,8 +603,7 @@ module.exports = {
         },
         {
           id: 34,
-          text:
-            "I am very worried about my work.",
+          text: "I am very worried about my work.",
         },
         {
           id: 35,
@@ -654,8 +622,7 @@ module.exports = {
         },
         {
           id: 38,
-          text:
-            "I am often glad to see that my work is beneficial to people.",
+          text: "I am often glad to see that my work is beneficial to people.",
         },
         {
           id: 39,
@@ -714,8 +681,7 @@ module.exports = {
         },
         {
           id: 50,
-          text:
-            "Success in my work inspires me.",
+          text: "Success in my work inspires me.",
         },
         {
           id: 51,
@@ -724,8 +690,7 @@ module.exports = {
         },
         {
           id: 52,
-          text:
-            "I lost my peace of mind because of work.",
+          text: "I lost my peace of mind because of work.",
         },
         {
           id: 53,
@@ -739,13 +704,11 @@ module.exports = {
         },
         {
           id: 55,
-          text:
-            "I often bring negative emotions home from work.",
+          text: "I often bring negative emotions home from work.",
         },
         {
           id: 56,
-          text:
-            "I often work hard.",
+          text: "I often work hard.",
         },
         {
           id: 57,
@@ -764,13 +727,11 @@ module.exports = {
         },
         {
           id: 60,
-          text:
-            "After a busy day at work, I feel unwell.",
+          text: "After a busy day at work, I feel unwell.",
         },
         {
           id: 61,
-          text:
-            "The contingent of partners I work with is very difficult.",
+          text: "The contingent of partners I work with is very difficult.",
         },
         {
           id: 62,
@@ -779,13 +740,11 @@ module.exports = {
         },
         {
           id: 63,
-          text:
-            "If I was lucky with my job, I would be happier.",
+          text: "If I was lucky with my job, I would be happier.",
         },
         {
           id: 64,
-          text:
-            "I am desperate because I have serious problems at work.",
+          text: "I am desperate because I have serious problems at work.",
         },
         {
           id: 65,
@@ -819,18 +778,15 @@ module.exports = {
         },
         {
           id: 71,
-          text:
-            "Working with people (partners) was very disappointing to me.",
+          text: "Working with people (partners) was very disappointing to me.",
         },
         {
           id: 72,
-          text:
-            "To recuperate, I often take medications.",
+          text: "To recuperate, I often take medications.",
         },
         {
           id: 73,
-          text:
-            "As a rule, my working day is calm and easy.",
+          text: "As a rule, my working day is calm and easy.",
         },
         {
           id: 74,
@@ -839,18 +795,15 @@ module.exports = {
         },
         {
           id: 75,
-          text:
-            "My career has gone well.",
+          text: "My career has gone well.",
         },
         {
           id: 76,
-          text:
-            "I am very nervous about everything related to work.",
+          text: "I am very nervous about everything related to work.",
         },
         {
           id: 77,
-          text:
-            "I would not like to see and hear some of my regular partners.",
+          text: "I would not like to see and hear some of my regular partners.",
         },
         {
           id: 78,
@@ -884,39 +837,38 @@ module.exports = {
         },
         {
           id: 84,
-          text:
-            "Working with people clearly undermines my health.",
+          text: "Working with people clearly undermines my health.",
         },
       ],
-      
-      criterions: {
 
+      criterions: {
         TENSION_CIRCUMSTANCES: "Experiencing traumatic circumstances",
         TENSION_SELF_SATISFACTION: "Self-satisfaction",
         TENSION_CAGED: "Confined in a cage",
         TENSION_DEPRESSION: "Anxiety and depression",
 
-        RESISTANCE_EMOTIONAL_RESPONSE: "Inappropriate selective emotional response",
+        RESISTANCE_EMOTIONAL_RESPONSE:
+          "Inappropriate selective emotional response",
         RESISTANCE_DISORIENTATION: "Emotional and moral disorientation",
-        RESISTANCE_EXPANDING_THE_SCOPE: "Expanding the scope of saving emotions",
+        RESISTANCE_EXPANDING_THE_SCOPE:
+          "Expanding the scope of saving emotions",
         RESISTANCE_PROF_DUTIES: "Reduction of professional duties",
 
         DEPLETION_EMOTIONAL_DEFECITS: "Emotional deficits",
         DEPLETION_EMOTIONAL_DETACHMENT: "Emotional detachment",
         DEPLETION_DEPERSONALIZATION: "Personal detachment (depersonalization)",
-        DEPLETION_PSYCHO_DISORDERS: "Psychosomatic and psychovegetative disorders",
+        DEPLETION_PSYCHO_DISORDERS:
+          "Psychosomatic and psychovegetative disorders",
 
         TENSION: "tension",
         RESISTANCE: "resistance",
         DEPLETION: "depletion",
 
-        SYMBOL_PLUS: "+",
-        SYMBOL_MINUS: "-",
-
+        SYMBOL_PLUS: "yes",
+        SYMBOL_MINUS: "no",
       },
 
       common: {
-
         WELCOME_TEXT: `Welcome to the CodeFlexers social support bot. 
           \nIt will help you to deal with your professional burnout problems. 
           \nAfter a short test you will receive information about your burnout state and will receive advice to handle the situation. 
@@ -926,8 +878,7 @@ module.exports = {
         LANGUAGE_CHANGED: `Language changed successfully. 
           \n\nClick on /language in order to choose language. 
           \n\nClick on /questionnaire in order to start the questionnaire.`,
-
-      }
+      },
     },
   },
 };

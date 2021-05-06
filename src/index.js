@@ -20,6 +20,26 @@ const { TRANSLATION } = require("./i18n");
 let language = "lang_en";
 let questionnaireResponse = [];
 
+let result = {
+  TENSION: null,
+  TENSION_CIRCUMSTANCES: null,
+  TENSION_CAGED: null,
+  TENSION_SELF_SATISFACTION: null,
+  TENSION_DEPRESSION: null,
+
+  RESISTANCE: null,
+  RESISTANCE_EMOTIONAL_RESPONSE: null,
+  RESISTANCE_DISORIENTATION: null,
+  RESISTANCE_PROF_DUTIES: null,
+  RESISTANCE_EXPANDING_THE_SCOPE: null,
+
+  DEPLETION: null,
+  DEPLETION_EMOTIONAL_DEFECITS: null,
+  DEPLETION_EMOTIONAL_DETACHMENT: null,
+  DEPLETION_DEPERSONALIZATION: null,
+  DEPLETION_PSYCHO_DISORDERS: null,
+};
+
 const start = () => {
   bot.setMyCommands([
     {
@@ -38,7 +58,7 @@ const start = () => {
 
   bot.on("message", async (msg) => {
     if (msg) {
-      const text = msg.text;
+      const text = msg.text || "";
       const chatId = msg.chat.id;
       const question = `${questionnaireResponse.length + 1}. ${
         TRANSLATION[language].questions[questionnaireResponse.length].text
@@ -46,7 +66,10 @@ const start = () => {
       switch (text) {
         case START_COMMAND: {
           questionnaireResponse = [];
-          return bot.sendMessage(chatId, WELCOME_TEXT);
+          return bot.sendMessage(
+            chatId,
+            TRANSLATION[language].common.WELCOME_TEXT
+          );
         }
         case QUESTIONNAIRE_COMMAND: {
           return bot.sendMessage(chatId, question, keyboard_options);
@@ -54,14 +77,22 @@ const start = () => {
         case LANGUAGE_COMMAND: {
           return bot.sendMessage(
             chatId,
-            CHOOSE_LANGUAGE_TEXT,
+            TRANSLATION[language].common.CHOOSE_LANGUAGE_TEXT,
             language_options
           );
         }
         default: {
-          return bot.sendMessage(chatId, WRONG_COMMAND);
+          return bot.sendMessage(
+            chatId,
+            TRANSLATION[language].common.WRONG_COMMAND
+          );
         }
       }
+    } else {
+      return bot.sendMessage(
+        chatId,
+        TRANSLATION[language].common.WRONG_COMMAND
+      );
     }
   });
 
@@ -73,37 +104,46 @@ const start = () => {
       case "no":
         {
           setAnswer(data);
-          if (questionnaireResponse.length !== 84) {
+          if (questionnaireResponse.length !== 5) {
             sendNewQuestions(chatId);
           } else {
-            sendResultsAfterQuestionnaire();
+            calculateResults();
           }
         }
         break;
       case "yes":
         {
           setAnswer(data);
-          if (questionnaireResponse.length !== 84) {
+          if (questionnaireResponse.length !== 5) {
             sendNewQuestions(chatId);
           } else {
-            sendResultsAfterQuestionnaire();
+            calculateResults();
           }
         }
         break;
       case LANG_RU:
         {
           language = LANG_RU;
-          return bot.sendMessage(chatId, LANGUAGE_CHANGED);
+          return bot.sendMessage(
+            chatId,
+            TRANSLATION[language].common.LANGUAGE_CHANGED
+          );
         }
         break;
       case LANG_EN:
         {
           language = LANG_EN;
-          return bot.sendMessage(chatId, LANGUAGE_CHANGED);
+          return bot.sendMessage(
+            chatId,
+            TRANSLATION[language].common.LANGUAGE_CHANGED
+          );
         }
         break;
       default: {
-        return bot.sendMessage(chatId, WRONG_COMMAND);
+        return bot.sendMessage(
+          chatId,
+          TRANSLATION[language].common.WRONG_COMMAND
+        );
       }
     }
   });
