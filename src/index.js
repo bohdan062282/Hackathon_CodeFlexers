@@ -2,23 +2,32 @@ const Api = require("node-telegram-bot-api");
 const token = "1744774850:AAH1JUhP8w-gO4gz6U16d7KoSvJcG5w-1zA";
 const bot = new Api(token, { polling: true });
 
-const { keyboard_options } = require("./options.js");
+const { keyboard_options, language_options } = require("./options.js");
+const { QUESTIONS_SETTINGS } = require("./constants/questions.js");
+const {
+  WELCOME_TEXT,
+  WRONG_COMMAND,
+  START_COMMAND,
+  LANGUAGE_COMMAND,
+  QUESTIONNAIRE_COMMAND,
+} = require("./constants/common");
+const { TRANSLATION } = require("./i18n");
 
-let language = "en";
+let language = "lang_en";
 let questionnaireResponse = [];
 
 const start = () => {
   bot.setMyCommands([
     {
-      command: "/start",
+      command: START_COMMAND,
       description: "Start bot",
     },
     {
-      command: "/questionnaire",
+      command: QUESTIONNAIRE_COMMAND,
       description: "Start questionnaire",
     },
     {
-      command: "/language",
+      command: LANGUAGE_COMMAND,
       description: "Choose language [EN/RU]",
     },
   ]);
@@ -27,42 +36,61 @@ const start = () => {
     const text = msg.text;
     const chatId = msg.chat.id;
 
-    if (text === "/start") {
-      questionnaireResponse =
-        questionnaireResponse.length === 84 ? [] : questionnaireResponse;
+    if (text === START_COMMAND) {
+      questionnaireResponse = [];
 
-      return bot.sendMessage(
-        chatId,
-        "Welcome to the CodeFlexers social support bot. \nIt will help you to deal with your professional burnout problems. \nAfter a short test you will receive information about your burnout state and will receive advice to handle the situation."
-      );
+      return bot.sendMessage(chatId, WELCOME_TEXT);
     }
 
-    if (text === "/questionnaire") {
-      return bot.sendMessage(
-        chatId,
-        "1. QuestionQuestionQuestionQuestionQuestionQuestion",
-        keyboard_options
-      );
+    if (text === QUESTIONNAIRE_COMMAND) {
+      const question = `${questionnaireResponse.length + 1}. ${
+        TRANSLATION[language].questions[questionnaireResponse.length].text
+      }`;
+      return bot.sendMessage(chatId, question, keyboard_options);
     }
 
-    if (text === "/language") {
+    if (text === LANGUAGE_COMMAND) {
     }
 
-    return bot.sendMessage(chatId, "Wrong command, try again!");
+    return bot.sendMessage(chatId, WRONG_COMMAND);
   });
 
   bot.on("callback_query", async (msg) => {
     const chatId = msg.message.chat.id;
     const data = msg.data;
 
-    if (msg.data === "no") {
-      return bot.sendMessage(chatId, "You clicked on No");
+    if (data === "no") {
+      setAnswer(data);
+      if (questionnaireResponse.length !== 5) {
+        sendNewQuestions(chatId);
+      } else {
+        console.log(questionnaireResponse);
+      }
     }
 
-    if (msg.data === "yes") {
-      return bot.sendMessage(chatId, "You clicked on Yes");
+    if (data === "yes") {
+      setAnswer(data);
+      if (questionnaireResponse.length !== 5) {
+        sendNewQuestions(chatId);
+      } else {
+        console.log(questionnaireResponse);
+      }
     }
   });
+};
+
+const setAnswer = (msg) => {
+  questionnaireResponse.push({
+    id: questionnaireResponse.length + 1,
+    response: msg,
+  });
+};
+
+const sendNewQuestions = (chatId) => {
+  const question = `${questionnaireResponse.length + 1}. ${
+    TRANSLATION[language].questions[questionnaireResponse.length].text
+  }`;
+  return bot.sendMessage(chatId, question, keyboard_options);
 };
 
 start();

@@ -1,27 +1,44 @@
-export const TRANSLATION = [
-  {
-    lang: "ru",
-    questions: {
-      question1: "-",
-      question2: "-",
+module.exports = {
+  TRANSLATION: {
+    lang_ru: {
+      questions: [
+        { id: 1, text: "-" },
+        { id: 2, text: "-" },
+      ],
+
+      criterions: {
+        TENSION_CIRCUMSTANCES: "Переживание психотравмирующих обстоятельств",
+      },
     },
-    criterions: {
-      TENSION_CIRCUMSTANCES: "Переживание психотравмирующих обстоятельств",
+
+    lang_en: {
+      questions: [
+        {
+          id: 1,
+          text:
+            "Organizational flaws at work constantly make you nervous, worried, tense.",
+        },
+        {
+          id: 2,
+          text:
+            "Today I am as satisfied with my profession as I was at the beginning of my career.",
+        },
+        {
+          id: 3,
+          text:
+            "I made a mistake in choosing a profession or profile (I am not in my place).",
+        },
+        {
+          id: 4,
+          text:
+            "My concern is that I have begun to work worse (less productive, better quality, slower).",
+        },
+        {
+          id: 5,
+          text:
+            "The warmth of interaction with partners very much depends on my mood - good or bad.",
+        },
+      ],
     },
   },
-  {
-    lang: "en",
-    questions: {
-      question1:
-        "Organizational flaws at work constantly make you nervous, worried, tense.",
-      question2:
-        "Today I am as satisfied with my profession as I was at the beginning of my career.",
-      question3:
-        "I made a mistake in choosing a profession or profile (I am not in my place).",
-      question4:
-        "My concern is that I have begun to work worse (less productive, better quality, slower).",
-      question5:
-        "The warmth of interaction with partners very much depends on my mood - good or bad.",
-    },
-  },
-];
+};

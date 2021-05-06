@@ -9,4 +9,14 @@ module.exports = {
       ],
     }),
   },
+  language_options: {
+    reply_markup: JSON.stringify({
+      inline_keyboard: [
+        [
+          { text: "EN", callback_data: "lang_en" },
+          { text: "RU", callback_data: "lang_ru" },
+        ],
+      ],
+    }),
+  },
 };
