@@ -37,25 +37,30 @@ const start = () => {
   ]);
 
   bot.on("message", async (msg) => {
-    const text = msg.text;
-    const chatId = msg.chat.id;
-    const question = `${questionnaireResponse.length + 1}. ${
-      TRANSLATION[language].questions[questionnaireResponse.length].text
-    }`;
-    console.log(msg);
-    switch (text) {
-      case START_COMMAND: {
-        questionnaireResponse = [];
-        return bot.sendMessage(chatId, WELCOME_TEXT);
-      }
-      case QUESTIONNAIRE_COMMAND: {
-        return bot.sendMessage(chatId, question, keyboard_options);
-      }
-      case LANGUAGE_COMMAND: {
-        return bot.sendMessage(chatId, CHOOSE_LANGUAGE_TEXT, language_options);
-      }
-      default: {
-        return bot.sendMessage(chatId, WRONG_COMMAND);
+    if (msg) {
+      const text = msg.text;
+      const chatId = msg.chat.id;
+      const question = `${questionnaireResponse.length + 1}. ${
+        TRANSLATION[language].questions[questionnaireResponse.length].text
+      }`;
+      switch (text) {
+        case START_COMMAND: {
+          questionnaireResponse = [];
+          return bot.sendMessage(chatId, WELCOME_TEXT);
+        }
+        case QUESTIONNAIRE_COMMAND: {
+          return bot.sendMessage(chatId, question, keyboard_options);
+        }
+        case LANGUAGE_COMMAND: {
+          return bot.sendMessage(
+            chatId,
+            CHOOSE_LANGUAGE_TEXT,
+            language_options
+          );
+        }
+        default: {
+          return bot.sendMessage(chatId, WRONG_COMMAND);
+        }
       }
     }
   });
@@ -119,6 +124,10 @@ const sendNewQuestions = (chatId) => {
 };
 
 const sendResultsAfterQuestionnaire = () => {
+  console.log(questionnaireResponse);
+};
+
+const calculateResults = () => {
   console.log(questionnaireResponse);
 };
 
