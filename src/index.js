@@ -10,6 +10,9 @@ const {
   START_COMMAND,
   LANGUAGE_COMMAND,
   QUESTIONNAIRE_COMMAND,
+  LANG_EN,
+  LANG_RU,
+  CHOOSE_LANGUAGE_TEXT,
 } = require("./constants/common");
 const { TRANSLATION } = require("./i18n");
 
@@ -35,45 +38,64 @@ const start = () => {
   bot.on("message", async (msg) => {
     const text = msg.text;
     const chatId = msg.chat.id;
+    const question = `${questionnaireResponse.length + 1}. ${
+      TRANSLATION[language].questions[questionnaireResponse.length].text
+    }`;
 
-    if (text === START_COMMAND) {
-      questionnaireResponse = [];
-
-      return bot.sendMessage(chatId, WELCOME_TEXT);
+    switch (text) {
+      case START_COMMAND: {
+        questionnaireResponse = [];
+        return bot.sendMessage(chatId, WELCOME_TEXT);
+      }
+      case QUESTIONNAIRE_COMMAND: {
+        return bot.sendMessage(chatId, question, keyboard_options);
+      }
+      case LANGUAGE_COMMAND: {
+        return bot.sendMessage(chatId, CHOOSE_LANGUAGE_TEXT, language_options);
+      }
+      default: {
+        return bot.sendMessage(chatId, WRONG_COMMAND);
+      }
     }
-
-    if (text === QUESTIONNAIRE_COMMAND) {
-      const question = `${questionnaireResponse.length + 1}. ${
-        TRANSLATION[language].questions[questionnaireResponse.length].text
-      }`;
-      return bot.sendMessage(chatId, question, keyboard_options);
-    }
-
-    if (text === LANGUAGE_COMMAND) {
-    }
-
-    return bot.sendMessage(chatId, WRONG_COMMAND);
   });
 
   bot.on("callback_query", async (msg) => {
     const chatId = msg.message.chat.id;
     const data = msg.data;
 
-    if (data === "no") {
-      setAnswer(data);
-      if (questionnaireResponse.length !== 5) {
-        sendNewQuestions(chatId);
-      } else {
-        console.log(questionnaireResponse);
-      }
-    }
-
-    if (data === "yes") {
-      setAnswer(data);
-      if (questionnaireResponse.length !== 5) {
-        sendNewQuestions(chatId);
-      } else {
-        console.log(questionnaireResponse);
+    switch (data) {
+      case "no":
+        {
+          setAnswer(data);
+          if (questionnaireResponse.length !== 5) {
+            sendNewQuestions(chatId);
+          } else {
+            console.log(questionnaireResponse);
+          }
+        }
+        break;
+      case "yes":
+        {
+          setAnswer(data);
+          if (questionnaireResponse.length !== 5) {
+            sendNewQuestions(chatId);
+          } else {
+            console.log(questionnaireResponse);
+          }
+        }
+        break;
+      case LANG_RU:
+        {
+          language = LANG_RU;
+        }
+        break;
+      case LANG_EN:
+        {
+          language = LANG_EN;
+        }
+        break;
+      default: {
+        return bot.sendMessage(chatId, WRONG_COMMAND);
       }
     }
   });

@@ -5,4 +5,7 @@ module.exports = {
   START_COMMAND: "/start",
   LANGUAGE_COMMAND: "/language",
   QUESTIONNAIRE_COMMAND: "/questionnaire",
+  LANG_EN: "lang_en",
+  LANG_RU: "lang_ru",
+  CHOOSE_LANGUAGE_TEXT: "What language do you prefer?",
 };
