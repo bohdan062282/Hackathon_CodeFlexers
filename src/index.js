@@ -105,7 +105,7 @@ const start = () => {
       case "no":
         {
           setAnswer(data);
-          if (questionnaireResponse.length !== 10) {
+          if (questionnaireResponse.length !== 84) {
             sendNewQuestions(chatId);
           } else {
             calculateResults();
@@ -115,7 +115,7 @@ const start = () => {
       case "yes":
         {
           setAnswer(data);
-          if (questionnaireResponse.length !== 10) {
+          if (questionnaireResponse.length !== 84) {
             sendNewQuestions(chatId);
           } else {
             calculateResults(chatId);
@@ -216,6 +216,7 @@ DEPLETION - ${result["DEPLETION"]}\n
     37–60 points - the phase is in the stage of formation;
     61 and more points - the formed phase.`;
   bot.sendMessage(chatId, message);
+  bot.sendMessage(chatId, TRANSLATION[language].common.ANSWER_TEXT);
 };
 
 start();
