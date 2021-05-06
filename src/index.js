@@ -15,29 +15,30 @@ const {
   CHOOSE_LANGUAGE_TEXT,
   LANGUAGE_CHANGED,
 } = require("./constants/common");
+const criterions = require("./constants/criterions.js");
 const { TRANSLATION } = require("./i18n");
 
 let language = "lang_en";
 let questionnaireResponse = [];
 
 let result = {
-  TENSION: null,
-  TENSION_CIRCUMSTANCES: null,
-  TENSION_CAGED: null,
-  TENSION_SELF_SATISFACTION: null,
-  TENSION_DEPRESSION: null,
+  TENSION: 0,
+  "Experiencing traumatic circumstances": 0,
+  "Confined in a cage": 0,
+  "Self-satisfaction": 0,
+  "Anxiety and depression": 0,
 
-  RESISTANCE: null,
-  RESISTANCE_EMOTIONAL_RESPONSE: null,
-  RESISTANCE_DISORIENTATION: null,
-  RESISTANCE_PROF_DUTIES: null,
-  RESISTANCE_EXPANDING_THE_SCOPE: null,
+  RESISTANCE: 0,
+  "Inappropriate selective emotional response": 0,
+  "Emotional and moral disorientation": 0,
+  "Reduction of professional duties": 0,
+  "Expanding the scope of saving emotions": 0,
 
-  DEPLETION: null,
-  DEPLETION_EMOTIONAL_DEFECITS: null,
-  DEPLETION_EMOTIONAL_DETACHMENT: null,
-  DEPLETION_DEPERSONALIZATION: null,
-  DEPLETION_PSYCHO_DISORDERS: null,
+  DEPLETION: 0,
+  "Emotional deficits": 0,
+  "Emotional detachment": 0,
+  "Personal detachment (depersonalization)": 0,
+  "Psychosomatic and psychovegetative disorders": 0,
 };
 
 const start = () => {
@@ -104,7 +105,7 @@ const start = () => {
       case "no":
         {
           setAnswer(data);
-          if (questionnaireResponse.length !== 5) {
+          if (questionnaireResponse.length !== 84) {
             sendNewQuestions(chatId);
           } else {
             calculateResults();
@@ -114,7 +115,7 @@ const start = () => {
       case "yes":
         {
           setAnswer(data);
-          if (questionnaireResponse.length !== 5) {
+          if (questionnaireResponse.length !== 84) {
             sendNewQuestions(chatId);
           } else {
             calculateResults();
@@ -163,12 +164,35 @@ const sendNewQuestions = (chatId) => {
   return bot.sendMessage(chatId, question, keyboard_options);
 };
 
-const sendResultsAfterQuestionnaire = () => {
-  console.log(questionnaireResponse);
+const calculateResults = () => {
+  questionnaireResponse.forEach((e) => {
+    let currentQuestionSettings = QUESTIONS_SETTINGS.find(
+      (item) => item.id === e.id
+    );
+    if (currentQuestionSettings.symbol === e.response) {
+      result[currentQuestionSettings.type] += currentQuestionSettings.points;
+    }
+  });
+  result["TENSION"] =
+    result["Experiencing traumatic circumstances"] +
+    result["Confined in a cage"] +
+    result["Self-satisfaction"] +
+    result["Anxiety and depression"];
+  result["RESISTANCE"] =
+    result["Inappropriate selective emotional response"] +
+    result["Emotional and moral disorientation"] +
+    result["Reduction of professional duties"] +
+    result["Expanding the scope of saving emotions"];
+  result["DEPLETION"] =
+    result["Emotional deficits"] +
+    result["Emotional detachment"] +
+    result["Personal detachment (depersonalization)"] +
+    result["Psychosomatic and psychovegetative disorders"];
+  sendResultsAfterQuestionnaire();
 };
 
-const calculateResults = () => {
-  console.log(questionnaireResponse);
+const sendResultsAfterQuestionnaire = () => {
+  console.log(result);
 };
 
 start();
