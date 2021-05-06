@@ -16,6 +16,6 @@ bot.on("message", (msg) => {
     bot.sendMessage(chatId, "Sorry but your life doesnt matter");
   }
 
-  bot.sendMessage(chatId, `Darova bot ${name}`);
+  bot.sendMessage(chatId, `Darova bot`);
   console.log(msg);
 });
