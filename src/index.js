@@ -41,7 +41,7 @@ const start = () => {
     const question = `${questionnaireResponse.length + 1}. ${
       TRANSLATION[language].questions[questionnaireResponse.length].text
     }`;
-
+    console.log(msg);
     switch (text) {
       case START_COMMAND: {
         questionnaireResponse = [];
@@ -67,20 +67,20 @@ const start = () => {
       case "no":
         {
           setAnswer(data);
-          if (questionnaireResponse.length !== 5) {
+          if (questionnaireResponse.length !== 84) {
             sendNewQuestions(chatId);
           } else {
-            console.log(questionnaireResponse);
+            sendResultsAfterQuestionnaire();
           }
         }
         break;
       case "yes":
         {
           setAnswer(data);
-          if (questionnaireResponse.length !== 5) {
+          if (questionnaireResponse.length !== 84) {
             sendNewQuestions(chatId);
           } else {
-            console.log(questionnaireResponse);
+            sendResultsAfterQuestionnaire();
           }
         }
         break;
@@ -113,6 +113,10 @@ const sendNewQuestions = (chatId) => {
     TRANSLATION[language].questions[questionnaireResponse.length].text
   }`;
   return bot.sendMessage(chatId, question, keyboard_options);
+};
+
+const sendResultsAfterQuestionnaire = () => {
+  console.log(questionnaireResponse);
 };
 
 start();

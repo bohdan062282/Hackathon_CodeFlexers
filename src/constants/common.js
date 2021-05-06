@@ -1,6 +1,8 @@
 module.exports = {
-  WELCOME_TEXT:
-    "Welcome to the CodeFlexers social support bot. \nIt will help you to deal with your professional burnout problems. \nAfter a short test you will receive information about your burnout state and will receive advice to handle the situation.",
+  WELCOME_TEXT: `Welcome to the CodeFlexers social support bot. 
+    \nIt will help you to deal with your professional burnout problems. 
+    \nAfter a short test you will receive information about your burnout state and will receive advice to handle the situation. 
+    \n\nClick on /language in order to choose language. \n\nClick on /questionnaire in order to start the questionnaire.`,
   WRONG_COMMAND: "Wrong command, try again!",
   START_COMMAND: "/start",
   LANGUAGE_COMMAND: "/language",
