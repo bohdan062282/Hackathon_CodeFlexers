@@ -13,15 +13,8 @@ export const QUESTIONS = [
     type: TENSION_CIRCUMSTANCES,
     symbol: SYMBOL_MINUS,
     points: 2,
-    question:
+    question_en: "",
+    question_ru:
       "Organizational flaws at work constantly make you nervous, worried, tense.",
-  },
-  {
-    id: 2,
-    type: TENSION,
-    symbol: SYMBOL_MINUS,
-    points: 2,
-    question:
-      "Today I am no less satisfied with my profession than at the beginning of my career.",
   },
 ];
