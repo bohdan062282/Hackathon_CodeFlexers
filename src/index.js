@@ -13,6 +13,7 @@ const {
   LANG_EN,
   LANG_RU,
   CHOOSE_LANGUAGE_TEXT,
+  LANGUAGE_CHANGED,
 } = require("./constants/common");
 const { TRANSLATION } = require("./i18n");
 
@@ -87,11 +88,13 @@ const start = () => {
       case LANG_RU:
         {
           language = LANG_RU;
+          return bot.sendMessage(chatId, LANGUAGE_CHANGED);
         }
         break;
       case LANG_EN:
         {
           language = LANG_EN;
+          return bot.sendMessage(chatId, LANGUAGE_CHANGED);
         }
         break;
       default: {
