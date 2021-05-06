@@ -105,7 +105,7 @@ const start = () => {
       case "no":
         {
           setAnswer(data);
-          if (questionnaireResponse.length !== 84) {
+          if (questionnaireResponse.length !== 10) {
             sendNewQuestions(chatId);
           } else {
             calculateResults();
@@ -115,10 +115,10 @@ const start = () => {
       case "yes":
         {
           setAnswer(data);
-          if (questionnaireResponse.length !== 84) {
+          if (questionnaireResponse.length !== 10) {
             sendNewQuestions(chatId);
           } else {
-            calculateResults();
+            calculateResults(chatId);
           }
         }
         break;
@@ -164,7 +164,7 @@ const sendNewQuestions = (chatId) => {
   return bot.sendMessage(chatId, question, keyboard_options);
 };
 
-const calculateResults = () => {
+const calculateResults = (chatId) => {
   questionnaireResponse.forEach((e) => {
     let currentQuestionSettings = QUESTIONS_SETTINGS.find(
       (item) => item.id === e.id
@@ -188,11 +188,34 @@ const calculateResults = () => {
     result["Emotional detachment"] +
     result["Personal detachment (depersonalization)"] +
     result["Psychosomatic and psychovegetative disorders"];
-  sendResultsAfterQuestionnaire();
+  sendResultsAfterQuestionnaire(chatId);
 };
 
-const sendResultsAfterQuestionnaire = () => {
-  console.log(result);
+const sendResultsAfterQuestionnaire = (chatId) => {
+  const message = `
+Experiencing traumatic circumstances - ${result["Experiencing traumatic circumstances"]}
+Confined in a cage - ${result["Confined in a cage"]}
+Self-satisfaction - ${result["Self-satisfaction"]}
+Anxiety and depression - ${result["Anxiety and depression"]}\n
+Inappropriate selective emotional response - ${result["Inappropriate selective emotional response"]}
+Emotional and moral disorientation - ${result["Emotional and moral disorientation"]}
+Reduction of professional duties - ${result["Reduction of professional duties"]}
+Expanding the scope of saving emotions - ${result["Expanding the scope of saving emotions"]}\n
+Emotional deficits - ${result["Emotional deficits"]}
+Emotional detachment - ${result["Emotional detachment"]}
+Personal detachment (depersonalization) - ${result["Personal detachment (depersonalization)"]}
+Psychosomatic and psychovegetative disorders - ${result["Psychosomatic and psychovegetative disorders"]}\n
+TENSION - ${result["TENSION"]}
+RESISTANCE - ${result["RESISTANCE"]}
+DEPLETION - ${result["DEPLETION"]}\n
+
+    9 or less points - uncomplicated symptom;
+    10-15 points - a developing symptom;
+    16 or more is an established symptom.
+    36 or less points - the phase has not formed;
+    37–60 points - the phase is in the stage of formation;
+    61 and more points - the formed phase.`;
+  bot.sendMessage(chatId, message);
 };
 
 start();
